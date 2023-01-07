@@ -12,6 +12,10 @@ jobs:
           node-version: 16.x
       - run: npm install
       - run: npm run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
   # Deploy job
   deploy:
     # Add a dependency to the build job
